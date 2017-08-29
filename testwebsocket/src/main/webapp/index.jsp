@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        
       //判断当前浏览器是否支持WebSocket
       if('WebSocket' in window){
-          websocket = new WebSocket("ws://127.0.0.1:8082/testwebsocket/chat");
+          websocket = new WebSocket("ws://127.0.0.1:8099/testwebsocket/chat");
       }
       else{
           alert('Not support websocket');
