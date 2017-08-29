@@ -21,6 +21,23 @@ public class MyWebSocket {
 	// 与某个客户端的连接会话，需要通过它来给客户端发送数据
 	private Session session;
 
+	public static CopyOnWriteArraySet<MyWebSocket> getWebSocketSet() {
+		return webSocketSet;
+	}
+
+	public static void setWebSocketSet(CopyOnWriteArraySet<MyWebSocket> webSocketSet) {
+		MyWebSocket.webSocketSet = webSocketSet;
+	}
+	
+	
+	public Session getSession() {
+		return session;
+	}
+
+	public void setSession(Session session) {
+		this.session = session;
+	}
+
 	/**
 	 * 连接建立成功调用的方法
 	 * @param session
@@ -64,6 +81,7 @@ public class MyWebSocket {
 				continue;
 			}
 		}
+		System.out.println("收到信息！当前在线人数为" + getOnlineCount());
 	}
 
 	/**
